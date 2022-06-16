@@ -1,7 +1,7 @@
 const CarList = () => {
 	return (
 		<div>
-			<h1>Car list</h1>
+			<h1>Car Brand List</h1>
 		</div>
 	);
 };
