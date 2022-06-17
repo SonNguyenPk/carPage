@@ -1,16 +1,17 @@
 import {
+	CalendarOutlined,
+	CarOutlined,
+	FolderOutlined,
 	MenuFoldOutlined,
 	MenuUnfoldOutlined,
-	CalendarOutlined,
-	UserOutlined,
-	FolderOutlined,
-	CarOutlined,
+	SettingOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
 import type { MenuProps } from 'antd';
+import { Divider } from 'antd';
+import { Layout, Menu } from 'antd';
 import React, { useState } from 'react';
-import './main-layout.css';
 import { Outlet } from 'react-router-dom';
+import './main-layout.css';
 const { Header, Sider, Content } = Layout;
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -29,7 +30,7 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-	getItem('CarBrand', '1', <CarOutlined />),
+	getItem('Car Brands', '1', <CarOutlined />),
 	getItem('Folder', '2', <FolderOutlined />, [
 		getItem('Menu Item', '3'),
 		getItem('Menu Item', '4'),
@@ -39,14 +40,21 @@ const items: MenuItem[] = [
 	getItem('Tasks', '7', <CalendarOutlined />),
 	getItem('Modules', '8', <CalendarOutlined />),
 	getItem('Notification', '9', <CalendarOutlined />),
+	getItem('Setting', '11', <SettingOutlined />),
 ];
 const MainLayout = () => {
 	const [collapsed, setCollapsed] = useState(false);
 	return (
 		<Layout>
-			<Sider collapsible collapsed={collapsed}>
+			<Sider trigger={null} collapsible collapsed={collapsed} style={{ height: '100vh' }}>
 				<div className='logo' />
-				<Menu theme='dark' mode='inline' defaultSelectedKeys={['1']} items={items} />
+				<Menu
+					theme='dark'
+					mode='inline'
+					//defaultSelectedKeys={['1']}
+					items={items}
+					className='side-bar'
+				/>
 			</Sider>
 			<Layout className='site-layout'>
 				<Header

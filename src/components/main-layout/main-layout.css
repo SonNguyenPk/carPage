@@ -15,6 +15,14 @@
 	margin: 16px;
 	background: rgba(255, 255, 255, 0.3);
 }
+.side-bar {
+	z-index: 1;
+}
+ul.side-bar > li:last-child.ant-menu-item {
+	position: absolute;
+	bottom: 20px;
+	max-width: 100%;
+}
 
 .site-layout .site-layout-background {
 	background: #fff;
