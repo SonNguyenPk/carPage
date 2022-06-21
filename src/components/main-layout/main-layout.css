@@ -15,9 +15,15 @@
 	margin: 16px;
 	background: rgba(255, 255, 255, 0.3);
 }
-.side-bar {
-	z-index: 1;
+
+.side-bar::after {
+	content: '';
+	position: absolute;
+	bottom: 80px;
+	width: 100%;
+	border: 0.5px solid #fff;
 }
+
 ul.side-bar > li:last-child.ant-menu-item {
 	position: absolute;
 	bottom: 20px;
